@@ -24,3 +24,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // kecamatan
 Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');
+Route::get('/kecamatan/add', [KecamatanController::class, 'add'])->name('kecamatan.add');
+Route::post('/kecamatan', [KecamatanController::class, 'store'])->name('kecamatan');
