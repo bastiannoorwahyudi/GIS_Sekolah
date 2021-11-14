@@ -12,4 +12,9 @@ class KecamatanModel extends Model
     {
         return DB::table('tabKecamatan')->get();
     }
+
+    public function store($data)
+    {
+        DB::table('tabKecamatan')->insert($data);
+    }
 }

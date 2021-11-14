@@ -13,6 +13,12 @@
                 </div>
             </div>
             <div class="card-body">
+                @if (session('pesan'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h6><i class="icon fas fa-check"></i> Alert..!, {{ session('pesan') }}</h6>
+                    </div>
+                @endif
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -28,7 +34,11 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $data->nama }}</td>
-                                <td style="background-color: {{ $data->warna }}"></td>
+                                <td>
+                                    <i class="fas fa-fill-drip" style="color: {{ $data->warna }} "></i>
+                                    <i class="fas fa-fill-drip" style="color: {{ $data->warna }} "></i>
+                                    <i class="fas fa-fill-drip" style="color: {{ $data->warna }} "></i>
+                                </td>
                                 <td></td>
                             </tr>
                         @endforeach

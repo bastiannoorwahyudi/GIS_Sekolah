@@ -15,6 +15,11 @@
                             <div class="form-group">
                                 <label>Kecamatan</label>
                                 <input type="text" name="kecamatan" class="form-control" placeholder="Kecamatan ...">
+                                <div class="text-danger">
+                                    @error('kecamatan')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -22,16 +27,25 @@
                                 <label>Warna</label>
                                 <div class="input-group my-colorpicker2">
                                     <input type="text" name="warna" class="form-control" placeholder="Warna ...">
-
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-layer-group"></i></span>
                                     </div>
+                                </div>
+                                <div class="text-danger">
+                                    @error('warna')
+                                        {{ $message }}
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <label>GEO-JSON</label>
                             <textarea class="form-control" name="geojson" id="" rows="5" placeholder="Geo-Json ..."></textarea>
+                            <div class="text-danger">
+                                @error('geojson')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>

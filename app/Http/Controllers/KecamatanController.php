@@ -40,9 +40,18 @@ class KecamatanController extends Controller
             'geojson' => 'required',
         ],
         [
-            'kecamatan.required' => 'Wajib Isi !!',
-            'warna.required' => 'Wajib Isi !!',
-            'geojson.required' => 'Wajib Isi !!',
+            'kecamatan.required' => 'Silahkan isi kecamatan !!!',
+            'warna.required' => 'Warna wajib Isi !!!',
+            'geojson.required' => 'GeoJson wajib Isi !!!',
         ]);
+        // jika tidak ada validasi, maka lakukan penyimpanan ke database
+        $data = [
+            'nama' => Request()->kecamatan,
+            'warna' => Request()->warna,
+            'geojson' => Request()->geojson
+        ];
+
+        $this->KecamatanModel->store($data);
+        return redirect()->route('kecamatan')->with('pesan','Data berhasil ditambahkan');
     }
 }
